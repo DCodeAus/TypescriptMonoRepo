@@ -1,2 +1,2 @@
-# TypescriptPizzaCLI
-Typescript Pizza CLI
+# TypescriptMonoRepo
+Typescript Mono Repo
