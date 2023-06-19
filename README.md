@@ -18,3 +18,10 @@ Then write the first line into the program
 9. import inquirer from "inquirer";
 then create the prompt variable.
 This will use the await method, so the question and then the enquirer will await the response before moving on.
+
+To run the file and generate the index.js
+Run (this will also generate the src folder if it doesnt exist)
+npx tsc -t es2022 -m es2022 --moduleResolution node --outDir src\
+
+After that run 
+node .\index.js
