@@ -1,9 +1,14 @@
 import inquirer from "inquirer";
+interface UserName {
+    text?: string;
+}
 
+  //name: Iname = {}
 const answer = await inquirer.prompt([
+    
     {
         type:'input',
-        name: 'name',
+        name:'Username:string',
         message:'What is your name?'
     },
     {
@@ -17,5 +22,19 @@ const answer = await inquirer.prompt([
         message: 'What is your gender?',
         choices: ['Male', 'Female']
     }
+    
 ]);
-console.log ("Your name is" + answer.name + "Your age is " + answer.age + "your gender is " + answer.gender);
+console.log ("Your name is" + answer.Username + "Your age is " + answer.age + "your gender is " + answer.gender);
+
+var jsonAnswers={};
+jsonAnswers.Username=answer.Username.toUpperCase();
+jsonAnswers.age=answer.age.toUpperCase();
+jsonAnswers.gender=answer.gender.toUpperCase();
+console.log(JSON.stringify(jsonAnswers, null, 5));
+
+console.log('Now parsing the JSON object')
+console.log('###############################################################')
+var queueNameObj = JSON.parse(JSON.stringify(jsonAnswers));
+console.log(queueNameObj);
+
+
